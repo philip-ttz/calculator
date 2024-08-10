@@ -72,6 +72,14 @@ body{
     background-color: #686E71;
     font-size: 1rem;
     color: #FAFBFC;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.output p{
+    padding: 20px;
+    font-size: 2rem;
 }
 
 #division, #multiplication, #subtraction, #addition, #equals{
