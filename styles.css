@@ -33,11 +33,6 @@ body{
     width: 400px;
 }
 
-#number0{
-    flex-grow: 2;
-    border-radius: 10rem;
-}
-
 .button{
     background-color: #686E71;
     border: none;
@@ -47,6 +42,11 @@ body{
     border-radius: 50%;
     color: #FAFBFC;
     cursor: pointer;
+}
+
+.number0{
+    flex-grow: 2;
+    border-radius: 10rem;
 }
 
 .button:active{
@@ -82,12 +82,12 @@ body{
     font-size: 2rem;
 }
 
-#division, #multiplication, #subtraction, #addition, #equals{
+.division, .multiplication, .subtraction, .addition, .equals{
     background-color: #B86914;
     color: #FEEABC;
 }
 
-#division:hover:not(:disabled), #multiplication:hover:not(:disabled), #subtraction:hover:not(:disabled), #addition:hover:not(:disabled), #equals:hover:not(:disabled){
+.division:hover:not(:disabled), .multiplication:hover:not(:disabled), .subtraction:hover:not(:disabled), .addition:hover:not(:disabled), .equals:hover:not(:disabled){
     background-color: #FEEABC;
     color: #B86914;
 }
@@ -97,12 +97,12 @@ body{
     color: #B86914; 
 }
 
-#ac, #plusminus, #percent{
+.ac, .plusminus, .percent{
     background-color: #286085;
     color: #F2F5FF;
 }
 
-#ac:hover:not(:disabled), #plusminus:hover:not(:disabled), #percent:hover:not(:disabled){
+.ac:hover:not(:disabled), .plusminus:hover:not(:disabled), .percent:hover:not(:disabled){
     background-color: #F2F5FF;
     color: #286085;
 }
