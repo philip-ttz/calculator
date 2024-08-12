@@ -92,6 +92,11 @@ body{
     color: #B86914;
 }
 
+.activebtn{
+    background-color: #FEEABC;
+    color: #B86914; 
+}
+
 #ac, #plusminus, #percent{
     background-color: #286085;
     color: #F2F5FF;

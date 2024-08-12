@@ -70,62 +70,95 @@ let secondnumber=0;
 let displayvalue=0;
 let currentState=1;
 
+
+division.addEventListener('click', () =>{
+    currentState=2;
+    operator="/";
+    division.classList.add("activebtn");
+    multiplication.classList.remove("activebtn");
+    subtraction.classList.remove("activebtn");
+    addition.classList.remove("activebtn");
+})
+multiplication.addEventListener('click', () =>{
+    currentState=2;
+    operator="x";
+    division.classList.remove("activebtn");
+    multiplication.classList.add("activebtn");
+    subtraction.classList.remove("activebtn");
+    addition.classList.remove("activebtn");
+})
+subtraction.addEventListener('click', () =>{
+    currentState=2;
+    operator="-";
+    division.classList.remove("activebtn");
+    multiplication.classList.remove("activebtn");
+    subtraction.classList.add("activebtn");
+    addition.classList.remove("activebtn");
+})
+addition.addEventListener('click', () =>{
+    currentState=2;
+    operator="+";
+    division.classList.remove("activebtn");
+    multiplication.classList.remove("activebtn");
+    subtraction.classList.remove("activebtn");
+    addition.classList.add("activebtn");
+})
 number0.addEventListener('click', ()=>{
-    if(currentState=1){
+    if(currentState===1){
         updateDisplay(0);
         displayvalue=parseInt(output.textContent,10);
     }
 })
 number1.addEventListener('click', ()=>{
-    if(currentState=1){
+    if(currentState===1){
         updateDisplay(1);
         displayvalue=parseInt(output.textContent,10);
     }
 })
 number2.addEventListener('click', ()=>{
-    if(currentState=1){
+    if(currentState===1){
         updateDisplay(2);
         displayvalue=parseInt(output.textContent,10);
     }
 })
 number3.addEventListener('click', ()=>{
-    if(currentState=1){
+    if(currentState===1){
         updateDisplay(3);
         displayvalue=parseInt(output.textContent,10);
     }
 })
 number4.addEventListener('click', ()=>{
-    if(currentState=1){
+    if(currentState===1){
         updateDisplay(4);
         displayvalue=parseInt(output.textContent,10);
     }
 })
 number5.addEventListener('click', ()=>{
-    if(currentState=1){
+    if(currentState===1){
         updateDisplay(5);
         displayvalue=parseInt(output.textContent,10);
     }
 })
 number6.addEventListener('click', ()=>{
-    if(currentState=1){
+    if(currentState===1){
         updateDisplay(6);
         displayvalue=parseInt(output.textContent,10);
     }
 })
 number7.addEventListener('click', ()=>{
-    if(currentState=1){
+    if(currentState===1){
         updateDisplay(7);
         displayvalue=parseInt(output.textContent,10);
     }
 })
 number8.addEventListener('click', ()=>{
-    if(currentState=1){
+    if(currentState===1){
         updateDisplay(8);
         displayvalue=parseInt(output.textContent,10);
     }
 })
 number9.addEventListener('click', ()=>{
-    if(currentState=1){
+    if(currentState===1){
         updateDisplay(9);
         displayvalue=parseInt(output.textContent,10);
     }
@@ -133,4 +166,5 @@ number9.addEventListener('click', ()=>{
 ac.addEventListener('click', ()=>{
     updateDisplay(0, true);
     displayvalue=parseInt(output.textContent,10);
+    currentState=1;
 })
