@@ -88,6 +88,17 @@ percent.addEventListener('click', () =>{
         updateDisplay(displayvalue,true);
     }
 })
+comma.addEventListener('click', () =>{
+    if(currentState===1 || currentState===3){
+        let numberStr=output.textContent;
+
+        if(!numberStr.includes('.')){
+            numberStr=numberStr+".";
+        }
+        output.textContent=numberStr;
+        displayvalue=parseFloat(output.textContent,10);
+    }
+})
 
 division.addEventListener('click', () =>{
     if(currentState===1) {
@@ -197,113 +208,113 @@ equals.addEventListener('click', () =>{
 number0.addEventListener('click', ()=>{
     if(currentState===1 || currentState===3){
         updateDisplay(0);
-        displayvalue=parseInt(output.textContent,10);
+        displayvalue=parseFloat(output.textContent,10);
     }if(currentState===2){
         updateDisplay(0,false,true);
         currentState=3;
-        displayvalue=parseInt(output.textContent,10);
+        displayvalue=parseFloat(output.textContent,10);
     }
 })
 number1.addEventListener('click', ()=>{
     if(currentState===1 || currentState===3){
         updateDisplay(1);
-        displayvalue=parseInt(output.textContent,10);
+        displayvalue=parseFloat(output.textContent,10);
     }
     if(currentState===2){
         updateDisplay(1,false,true);
         currentState=3;
-        displayvalue=parseInt(output.textContent,10);
+        displayvalue=parseFloat(output.textContent,10);
     }
 })
 number2.addEventListener('click', ()=>{
     if(currentState===1 || currentState===3){
         updateDisplay(2);
-        displayvalue=parseInt(output.textContent,10);
+        displayvalue=parseFloat(output.textContent,10);
     }
     if(currentState===2){
         updateDisplay(2,false,true);
         currentState=3;
-        displayvalue=parseInt(output.textContent,10);
+        displayvalue=parseFloat(output.textContent,10);
     }
 })
 number3.addEventListener('click', ()=>{
     if(currentState===1 || currentState===3){
         updateDisplay(3);
-        displayvalue=parseInt(output.textContent,10);
+        displayvalue=parseFloat(output.textContent,10);
     }
     if(currentState===2){
         updateDisplay(3,false,true);
         currentState=3;
-        displayvalue=parseInt(output.textContent,10);
+        displayvalue=parseFloat(output.textContent,10);
     }
 })
 number4.addEventListener('click', ()=>{
     if(currentState===1 || currentState===3){
         updateDisplay(4);
-        displayvalue=parseInt(output.textContent,10);
+        displayvalue=parseFloat(output.textContent,10);
     }
     if(currentState===2){
         updateDisplay(4,false,true);
         currentState=3;
-        displayvalue=parseInt(output.textContent,10);
+        displayvalue=parseFloat(output.textContent,10);
     }
 })
 number5.addEventListener('click', ()=>{
     if(currentState===1 || currentState===3){
         updateDisplay(5);
-        displayvalue=parseInt(output.textContent,10);
+        displayvalue=parseFloat(output.textContent,10);
     }
     if(currentState===2){
         updateDisplay(5,false,true);
         currentState=3;
-        displayvalue=parseInt(output.textContent,10);
+        displayvalue=parseFloat(output.textContent,10);
     }
 })
 number6.addEventListener('click', ()=>{
     if(currentState===1 || currentState===3){
         updateDisplay(6);
-        displayvalue=parseInt(output.textContent,10);
+        displayvalue=parseFloat(output.textContent,10);
     }
     if(currentState===2){
         updateDisplay(6,false,true);
         currentState=3;
-        displayvalue=parseInt(output.textContent,10);
+        displayvalue=parseFloat(output.textContent,10);
     }
 })
 number7.addEventListener('click', ()=>{
     if(currentState===1 || currentState===3){
         updateDisplay(7);
-        displayvalue=parseInt(output.textContent,10);
+        displayvalue=parseFloat(output.textContent,10);
     }
     if(currentState===2){
         updateDisplay(7,false,true);
         currentState=3;
-        displayvalue=parseInt(output.textContent,10);
+        displayvalue=parseFloat(output.textContent,10);
     }
 })
 number8.addEventListener('click', ()=>{
     if(currentState===1 || currentState===3){
         updateDisplay(8);
-        displayvalue=parseInt(output.textContent,10);
+        displayvalue=parseFloat(output.textContent,10);
     }if(currentState===2){
         updateDisplay(8,false,true);
         currentState=3;
-        displayvalue=parseInt(output.textContent,10);
+        displayvalue=parseFloat(output.textContent,10);
     }
 })
 number9.addEventListener('click', ()=>{
     if(currentState===1 || currentState===3){
         updateDisplay(9);
-        displayvalue=parseInt(output.textContent,10);
+        displayvalue=parseFloat(output.textContent,10);
     }if(currentState===2){
         updateDisplay(9,false,true);
         currentState=3;
-        displayvalue=parseInt(output.textContent,10);
+        displayvalue=parseFloat(output.textContent,10);
     }
 })
 ac.addEventListener('click', ()=>{
     updateDisplay(0, true);
-    displayvalue=parseInt(output.textContent,10);
+    displayvalue=parseFloat(output.textContent,10);
     currentState=1;
     division.classList.remove("activebtn");
     multiplication.classList.remove("activebtn");
