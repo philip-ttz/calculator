@@ -49,8 +49,8 @@ function operate(num1, op, num2){
     return result;
 }
 
-function updateDisplay(displayValue, clear=false){
-    if(clear===false){
+function updateDisplay(displayValue, clear=false, operator=false){
+    if(clear===false && operator===false){
         if(output.textContent.length<19){
             if(output.textContent==="0"){
                 if(displayValue!=0)output.textContent=""+displayValue;
@@ -58,7 +58,9 @@ function updateDisplay(displayValue, clear=false){
                 output.textContent=""+output.textContent+displayValue;
             }
         }
-    }else{
+    }else if(clear===true){
+        output.textContent=""+displayValue;
+    }else if(operator===true){
         output.textContent=""+displayValue;
     }
 }
@@ -72,94 +74,166 @@ let currentState=1;
 
 
 division.addEventListener('click', () =>{
-    currentState=2;
-    operator="/";
-    division.classList.add("activebtn");
-    multiplication.classList.remove("activebtn");
-    subtraction.classList.remove("activebtn");
-    addition.classList.remove("activebtn");
+    if(currentState===1) {
+        currentState=2;
+        operator="/";
+        firstnumber=displayvalue;
+        division.classList.add("activebtn");
+        multiplication.classList.remove("activebtn");
+        subtraction.classList.remove("activebtn");
+        addition.classList.remove("activebtn");
+    }
 })
 multiplication.addEventListener('click', () =>{
-    currentState=2;
-    operator="x";
-    division.classList.remove("activebtn");
-    multiplication.classList.add("activebtn");
-    subtraction.classList.remove("activebtn");
-    addition.classList.remove("activebtn");
+    if(currentState===1) {
+        currentState=2;
+        operator="x";
+        firstnumber=displayvalue;
+        division.classList.remove("activebtn");
+        multiplication.classList.add("activebtn");
+        subtraction.classList.remove("activebtn");
+        addition.classList.remove("activebtn");
+    }
 })
 subtraction.addEventListener('click', () =>{
-    currentState=2;
-    operator="-";
-    division.classList.remove("activebtn");
-    multiplication.classList.remove("activebtn");
-    subtraction.classList.add("activebtn");
-    addition.classList.remove("activebtn");
+    if(currentState===1) {
+        currentState=2;
+        operator="-";
+        firstnumber=displayvalue;
+        division.classList.remove("activebtn");
+        multiplication.classList.remove("activebtn");
+        subtraction.classList.add("activebtn");
+        addition.classList.remove("activebtn");
+    }
 })
 addition.addEventListener('click', () =>{
-    currentState=2;
-    operator="+";
-    division.classList.remove("activebtn");
-    multiplication.classList.remove("activebtn");
-    subtraction.classList.remove("activebtn");
-    addition.classList.add("activebtn");
+    if(currentState===1) {
+        currentState=2;
+        operator="+";
+        firstnumber=displayvalue;
+        division.classList.remove("activebtn");
+        multiplication.classList.remove("activebtn");
+        subtraction.classList.remove("activebtn");
+        addition.classList.add("activebtn");
+    }
+})
+equals.addEventListener('click', () =>{
+    if(currentState===3){
+        secondnumber=displayvalue;
+        displayvalue=operate(firstnumber, operator, secondnumber);
+        updateDisplay(displayvalue,false,true);
+        firstnumber=displayvalue;
+        currentState=1;
+        division.classList.remove("activebtn");
+        multiplication.classList.remove("activebtn");
+        subtraction.classList.remove("activebtn");
+        addition.classList.remove("activebtn");
+    }
 })
 number0.addEventListener('click', ()=>{
     if(currentState===1){
         updateDisplay(0);
         displayvalue=parseInt(output.textContent,10);
+    }if(currentState===2){
+        updateDisplay(0,false,true);
+        currentState=3;
+        displayvalue=parseInt(output.textContent,10);
     }
 })
 number1.addEventListener('click', ()=>{
-    if(currentState===1){
+    if(currentState===1 || currentState===3){
         updateDisplay(1);
+        displayvalue=parseInt(output.textContent,10);
+    }
+    if(currentState===2){
+        updateDisplay(1,false,true);
+        currentState=3;
         displayvalue=parseInt(output.textContent,10);
     }
 })
 number2.addEventListener('click', ()=>{
-    if(currentState===1){
+    if(currentState===1 || currentState===3){
         updateDisplay(2);
+        displayvalue=parseInt(output.textContent,10);
+    }
+    if(currentState===2){
+        updateDisplay(2,false,true);
+        currentState=3;
         displayvalue=parseInt(output.textContent,10);
     }
 })
 number3.addEventListener('click', ()=>{
-    if(currentState===1){
+    if(currentState===1 || currentState===3){
         updateDisplay(3);
+        displayvalue=parseInt(output.textContent,10);
+    }
+    if(currentState===2){
+        updateDisplay(3,false,true);
+        currentState=3;
         displayvalue=parseInt(output.textContent,10);
     }
 })
 number4.addEventListener('click', ()=>{
-    if(currentState===1){
+    if(currentState===1 || currentState===3){
         updateDisplay(4);
+        displayvalue=parseInt(output.textContent,10);
+    }
+    if(currentState===2){
+        updateDisplay(4,false,true);
+        currentState=3;
         displayvalue=parseInt(output.textContent,10);
     }
 })
 number5.addEventListener('click', ()=>{
-    if(currentState===1){
+    if(currentState===1 || currentState===3){
         updateDisplay(5);
+        displayvalue=parseInt(output.textContent,10);
+    }
+    if(currentState===2){
+        updateDisplay(5,false,true);
+        currentState=3;
         displayvalue=parseInt(output.textContent,10);
     }
 })
 number6.addEventListener('click', ()=>{
-    if(currentState===1){
+    if(currentState===1 || currentState===3){
         updateDisplay(6);
+        displayvalue=parseInt(output.textContent,10);
+    }
+    if(currentState===2){
+        updateDisplay(6,false,true);
+        currentState=3;
         displayvalue=parseInt(output.textContent,10);
     }
 })
 number7.addEventListener('click', ()=>{
-    if(currentState===1){
+    if(currentState===1 || currentState===3){
         updateDisplay(7);
+        displayvalue=parseInt(output.textContent,10);
+    }
+    if(currentState===2){
+        updateDisplay(7,false,true);
+        currentState=3;
         displayvalue=parseInt(output.textContent,10);
     }
 })
 number8.addEventListener('click', ()=>{
-    if(currentState===1){
+    if(currentState===1 || currentState===3){
         updateDisplay(8);
+        displayvalue=parseInt(output.textContent,10);
+    }if(currentState===2){
+        updateDisplay(8,false,true);
+        currentState=3;
         displayvalue=parseInt(output.textContent,10);
     }
 })
 number9.addEventListener('click', ()=>{
-    if(currentState===1){
+    if(currentState===1 || currentState===3){
         updateDisplay(9);
+        displayvalue=parseInt(output.textContent,10);
+    }if(currentState===2){
+        updateDisplay(9,false,true);
+        currentState=3;
         displayvalue=parseInt(output.textContent,10);
     }
 })
