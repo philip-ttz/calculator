@@ -72,6 +72,22 @@ let secondnumber=0;
 let displayvalue=0;
 let currentState=1;
 
+//currentState 1 is active while typing in the first number
+//currentState 2 is active after choosing the operator
+//currentState 3 is active while typing in the second number
+
+plusminus.addEventListener('click', () =>{
+    if(currentState===1 || currentState===3){
+        displayvalue=-displayvalue;
+        updateDisplay(displayvalue,true);
+    }
+})
+percent.addEventListener('click', () =>{
+    if(currentState===1 || currentState===3){
+        displayvalue=displayvalue/100;
+        updateDisplay(displayvalue,true);
+    }
+})
 
 division.addEventListener('click', () =>{
     if(currentState===1) {
