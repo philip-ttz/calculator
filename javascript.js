@@ -83,12 +83,36 @@ division.addEventListener('click', () =>{
         subtraction.classList.remove("activebtn");
         addition.classList.remove("activebtn");
     }
+    if(currentState===3){
+        secondnumber=displayvalue;
+        displayvalue=operate(firstnumber, operator, secondnumber);
+        updateDisplay(displayvalue,false,true);
+        firstnumber=displayvalue;
+        currentState=2;
+        operator="/";
+        division.classList.add("activebtn");
+        multiplication.classList.remove("activebtn");
+        subtraction.classList.remove("activebtn");
+        addition.classList.remove("activebtn");
+    }
 })
 multiplication.addEventListener('click', () =>{
     if(currentState===1) {
         currentState=2;
         operator="x";
         firstnumber=displayvalue;
+        division.classList.remove("activebtn");
+        multiplication.classList.add("activebtn");
+        subtraction.classList.remove("activebtn");
+        addition.classList.remove("activebtn");
+    }
+    if(currentState===3){
+        secondnumber=displayvalue;
+        displayvalue=operate(firstnumber, operator, secondnumber);
+        updateDisplay(displayvalue,false,true);
+        firstnumber=displayvalue;
+        currentState=2;
+        operator="x";
         division.classList.remove("activebtn");
         multiplication.classList.add("activebtn");
         subtraction.classList.remove("activebtn");
@@ -105,12 +129,36 @@ subtraction.addEventListener('click', () =>{
         subtraction.classList.add("activebtn");
         addition.classList.remove("activebtn");
     }
+    if(currentState===3){
+        secondnumber=displayvalue;
+        displayvalue=operate(firstnumber, operator, secondnumber);
+        updateDisplay(displayvalue,false,true);
+        firstnumber=displayvalue;
+        currentState=2;
+        operator="-";
+        division.classList.remove("activebtn");
+        multiplication.classList.remove("activebtn");
+        subtraction.classList.add("activebtn");
+        addition.classList.remove("activebtn");
+    }
 })
 addition.addEventListener('click', () =>{
     if(currentState===1) {
         currentState=2;
         operator="+";
         firstnumber=displayvalue;
+        division.classList.remove("activebtn");
+        multiplication.classList.remove("activebtn");
+        subtraction.classList.remove("activebtn");
+        addition.classList.add("activebtn");
+    }
+    if(currentState===3){
+        secondnumber=displayvalue;
+        displayvalue=operate(firstnumber, operator, secondnumber);
+        updateDisplay(displayvalue,false,true);
+        firstnumber=displayvalue;
+        currentState=2;
+        operator="+";
         division.classList.remove("activebtn");
         multiplication.classList.remove("activebtn");
         subtraction.classList.remove("activebtn");
@@ -131,7 +179,7 @@ equals.addEventListener('click', () =>{
     }
 })
 number0.addEventListener('click', ()=>{
-    if(currentState===1){
+    if(currentState===1 || currentState===3){
         updateDisplay(0);
         displayvalue=parseInt(output.textContent,10);
     }if(currentState===2){
