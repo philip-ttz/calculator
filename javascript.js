@@ -101,7 +101,7 @@ comma.addEventListener('click', () =>{
 })
 
 division.addEventListener('click', () =>{
-    if(currentState===1) {
+    if(currentState===1 || currentState===2) {
         currentState=2;
         operator="/";
         firstnumber=displayvalue;
@@ -124,7 +124,7 @@ division.addEventListener('click', () =>{
     }
 })
 multiplication.addEventListener('click', () =>{
-    if(currentState===1) {
+    if(currentState===1 || currentState===2) {
         currentState=2;
         operator="x";
         firstnumber=displayvalue;
@@ -147,7 +147,7 @@ multiplication.addEventListener('click', () =>{
     }
 })
 subtraction.addEventListener('click', () =>{
-    if(currentState===1) {
+    if(currentState===1 || currentState===2) {
         currentState=2;
         operator="-";
         firstnumber=displayvalue;
@@ -170,7 +170,7 @@ subtraction.addEventListener('click', () =>{
     }
 })
 addition.addEventListener('click', () =>{
-    if(currentState===1) {
+    if(currentState===1 || currentState===2) {
         currentState=2;
         operator="+";
         firstnumber=displayvalue;
